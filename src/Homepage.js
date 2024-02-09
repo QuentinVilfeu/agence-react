@@ -30,7 +30,7 @@ function Homepage() {
       setOpacityContent(0);
 
     } else if ($(window).scrollTop() > startOpacity && $(window).scrollTop() < endOpacity) {
-      if (direction == "down") {
+      if (direction === "down") {
         setOpacity(opacity - ((lastY - startOpacity) * pasOpacity));
         setOpacityContent(opacityContent + ((lastY - startOpacity) * pasOpacity));
       } else {
@@ -43,13 +43,15 @@ function Homepage() {
       setOpacityContent(1);
     }
 
-    // $('#root').css("opacity", opacity);
     $('#root').css("background-color", "rgba(0, 0, 0, "+opacityContent+")");
     $('header > h1').css("opacity", opacity);
     $('section > h2').css("opacity", opacityContent);
 
-    let backgroundSize = 100 + $(window).scrollTop() + '%';
     let titleSize = "min(10vw, "+ (46 + $(window).scrollTop()) +"px)";
+    let backgroundSize = 100 + $(window).scrollTop() + '%';
+    if ($('#root').css("background-size").indexOf('px') != -1) {
+      backgroundSize = 130 + $(window).scrollTop() + '% '+(100 + $(window).scrollTop())+'vh';
+    }
     $('#root').css("background-size", backgroundSize);
     $('header > h1').css("font-size", titleSize);
   
