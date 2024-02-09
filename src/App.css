@@ -1,16 +1,23 @@
 #root{
   background-color: rgba(0, 0, 0, 0);
-  background-image: url(../public/background3.jpg);
-  background-size: contain;
+  background-image: url(../public/background_mobile.jpeg);
+  background-size: 130% 100vh;
   margin: auto;
   background-position: center;
   background-attachment: fixed;
   opacity: 1;
 }
 
+@media screen and (min-width: 500px){
+  #root{
+    background-size: 100%;
+  }
+}
+
 .app {
   height: 100vh;
 }
+
 h1,h2,h3,h4,h5,h6{
   margin: 0;
   padding: 0;
