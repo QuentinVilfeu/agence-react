@@ -1,6 +1,6 @@
-#root{
+#homepageContainer{
   background-color: rgba(0, 0, 0, 0);
-  background-image: url(../public/background_mobile.jpeg);
+  background-image: url(../../../public/background_mobile.jpeg);
   background-size: 130% 100vh;
   margin: auto;
   background-position: center;
@@ -9,9 +9,13 @@
 }
 
 @media screen and (min-width: 500px){
-  #root{
+  #homepageContainer{
     background-size: 100%;
   }
+}
+
+nav {
+  opacity: 0;
 }
 
 .app {
@@ -35,13 +39,28 @@ header{
 header > h1 {
   font-size: min(10vw, 46px);
   color: white;
-  opacity: 1;
+  opacity: 0;
   word-break: keep-all;
 }
 section{
-  height: 200vh;
+  height: 100vh;
+  color: white;
+  padding: 15px;
+  position: relative;
+
 }
 h2 {
-  color: white;
   opacity: 0;
+  text-align: center;
+}
+section > p {
+  text-align: center;
+}
+
+section .planeIcon{
+  font-size: 50px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) rotate(180deg);
 }
